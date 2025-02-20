@@ -12,27 +12,47 @@ async function greet() {
 </script>
 
 <template>
-  <main class="container">
-    <h1>Welcome to Tauri + Vue</h1>
-    <div class="row">
-      <a href="https://vitejs.dev" target="_blank">
-        <img src="/vite.svg" class="logo vite" alt="Vite logo" />
-      </a>
-      <a href="https://tauri.app" target="_blank">
-        <img src="/tauri.svg" class="logo tauri" alt="Tauri logo" />
-      </a>
-      <a href="https://vuejs.org/" target="_blank">
-        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-      </a>
-    </div>
-    <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
+  <q-layout view="lHh lpr lFf">
+    <q-header>
+      <q-toolbar class="bg-purple text-white">
+        <q-btn flat round dense icon="menu" />
+        <q-toolbar-title>
+          Toolbar
+        </q-toolbar-title>
+        <q-btn flat round dense icon="more_vert" />
+      </q-toolbar>
+    </q-header>
+    <q-page-container>
+      <q-page>
+        <main class="container">
+          <h1>Welcome to Tauri + Vue</h1>
+          <div class="row">
+            <a href="https://vitejs.dev" target="_blank">
+              <img src="/vite.svg" class="logo vite" alt="Vite logo" />
+            </a>
+            <a href="https://tauri.app" target="_blank">
+              <img src="/tauri.svg" class="logo tauri" alt="Tauri logo" />
+            </a>
+            <a href="https://vuejs.org/" target="_blank">
+              <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+            </a>
+          </div>
+          <p>Click on the Tauri, Vite, and Vue logos to learn more.</p>
 
-    <form class="row" @submit.prevent="greet">
-      <input id="greet-input" v-model="name" placeholder="Enter a name..." />
-      <button type="submit">Greet</button>
-    </form>
-    <p>{{ greetMsg }}</p>
-  </main>
+          <form class="row" @submit.prevent="greet">
+            <input id="greet-input" v-model="name" placeholder="Enter a name..." />
+            <button type="submit">Greet</button>
+          </form>
+          <p>{{ greetMsg }}</p>
+        </main>
+      </q-page>
+    </q-page-container>
+  </q-layout>
+  <q-footer elevated>
+    <q-toolbar>
+      <q-toolbar-title>Footer</q-toolbar-title>
+    </q-toolbar>
+  </q-footer>
 </template>
 
 <style scoped>
